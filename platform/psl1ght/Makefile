@@ -175,11 +175,11 @@ LIBS =
 
 include $(PSL1GHT)/ppu_rules
 
+AR=$(PSL1GHT)/ppu/bin/ppu-ar
+CC=$(PSL1GHT)/ppu/bin/ppu-gcc
+CXX=$(PSL1GHT)/ppu/bin/ppu-g++
 
 ifeq ($(CLEANUP_TYPE),CPPXX)
-
-CC=ppu-gcc
-CXX=ppu-g++
 
 pte_throw.o: pte_throw.c
 	$(CXX) $(CXXFLAGS) $(CPPFLAGS) $(INCLUDES) $(TARGET_ARCH) \
@@ -196,6 +196,6 @@ clean:
 
 install: $(TARGET_LIB)
 	@cp -v $(TARGET_LIB) $(PSL1GHT)/ppu/lib/libpthread.a
-	@cp -v *.h $(PSL1GHT)/ppu/include
+	@cp -v pte_types.h $(PSL1GHT)/ppu/include
+	@cp -v ../../pthread.h $(PSL1GHT)/ppu/include
 	@echo "Done."
-

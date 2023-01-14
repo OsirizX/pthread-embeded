@@ -187,10 +187,10 @@ endif
 
 include $(PSL1GHT)/ppu_rules
 
-ifeq ($(CLEANUP_TYPE),CPPXXX)
+CC=$(PSL1GHT)/ppu/bin/ppu-gcc
+CXX=$(PSL1GHT)/ppu/bin/ppu-g++
 
-CC=ppu-gcc
-CXX=ppu-g++
+ifeq ($(CLEANUP_TYPE),CPPXXX)
 
 exception1.o: exception1.c
 	$(CXX) $(CXXFLAGS) $(CPPFLAGS) $(INCLUDES) $(TARGET_ARCH) \
@@ -208,6 +208,8 @@ endif
 
 $(TARGET) : $(OBJS)
 
+clean:
+	rm -rf $(TARGET) $(OBJS)
+
 install: $(TARGET)
 	@echo "Nothing to do here."
-
