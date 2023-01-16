@@ -45,8 +45,6 @@
 #include "pthread.h"
 #include "implement.h"
 
-typedef signed long int64_t;
-
 unsigned int
 pte_relmillisecs (const struct timespec * abstime)
 {
