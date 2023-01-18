@@ -198,4 +198,6 @@ install: $(TARGET_LIB)
 	@cp -v $(TARGET_LIB) $(PSL1GHT)/ppu/lib/libpthread.a
 	@cp -v pte_types.h $(PSL1GHT)/ppu/include
 	@cp -v ../../pthread.h $(PSL1GHT)/ppu/include
+	@cp -v ../../semaphore.h $(PSL1GHT)/ppu/include
+	@cp -v ../../sched.h $(PSL1GHT)/ppu/include
 	@echo "Done."
